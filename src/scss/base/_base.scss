@@ -1,0 +1,5 @@
+@use 'setting';
+
+body {
+    font-family: setting.$font-family;
+}

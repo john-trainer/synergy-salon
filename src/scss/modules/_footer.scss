@@ -1,0 +1,18 @@
+@use 'setting';
+@use 'mixin';
+
+.footer {
+    margin-top: 24px;
+    margin-bottom: 64px;
+}
+.footer__container {
+    text-align: center;
+    padding-top: 8px;
+    padding-bottom: 30px;
+    border-top: 1px solid setting.$color-border;
+}
+.footer__txt {
+    @include mixin.fz(12);
+    font-weight: 400;
+    color: setting.$color-black;
+}

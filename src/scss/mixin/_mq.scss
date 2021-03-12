@@ -1,0 +1,10 @@
+// メディアクエリを設定する
+
+@use 'sass:map'; // ビルトインモジュール
+@use '../setting/config'; // 変数を引っ張ってくる
+
+@mixin mq($breakpoint) {
+    @media #{map-get(config.$breakpoints, $breakpoint)} {
+        @content;
+    }
+}

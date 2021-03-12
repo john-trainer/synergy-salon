@@ -1,0 +1,6 @@
+// フォントサイズを設定する
+
+@mixin fz($size) {
+    font-size: $size + px; // IE10以下の対応
+    font-size: ($size / 16) + rem;
+}

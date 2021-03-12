@@ -1,0 +1,46 @@
+@use 'setting';
+@use 'mixin';
+
+.scroll-bar {
+    display: none;
+    font-weight: 500;
+    color: setting.$color-gray;
+    writing-mode: vertical-lr;
+    transform: translateY(-50%);
+    @include mixin.mq(lg) {
+        display: inline-block;
+        @include mixin.fz(14);
+        transform: translateY(-100%);
+    }
+    @include mixin.mq(xxl) {
+        transform: translateY(-150%);
+    }
+    &::after {
+        content: '';
+        display: inline-block;
+        width: 2px;
+        height: 64px;
+        background-color: currentColor;
+        margin-top: 16px;
+        transform: translateX(-50%);
+        animation: sdl 1.5s cubic-bezier(1, 0, 0, 1) infinite;
+        @keyframes sdl {
+            0% {
+                transform: scale(1, 0);
+                transform-origin: 0 0;
+            }
+            50% {
+                transform: scale(1, 1);
+                transform-origin: 0 0;
+            }
+            50.1% {
+                transform: scale(1, 1);
+                transform-origin: 0 100%;
+            }
+            100% {
+                transform: scale(1, 0);
+                transform-origin: 0 100%;
+            }
+        }
+    }
+}

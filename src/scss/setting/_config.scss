@@ -1,0 +1,24 @@
+// 変数を定義する
+
+// フォント
+$font-family: 'Hiragino Kaku Gothic ProN', 'Montserrat', sans-serif;
+
+// カラー指定
+$color-main: #8bc889;
+$color-white: #ffffff;
+$color-black: #222222;
+$color-gray: #c4c4c4;
+$color-border: #e0e0e0;
+$color-accent01: #7baf7a;
+
+// コンテンツのmax-width
+$contents--max-width: 1160px;
+
+// ブレイクポイント
+$breakpoints: (
+    'sm': 'screen and (min-width: 576px)',
+    'md': 'screen and (min-width: 768px)',
+    'lg': 'screen and (min-width: 992px)',
+    'xl': 'screen and (min-width: 1200px)',
+    'xxl': 'screen and (min-width: 1400px)',
+) !default;

@@ -1,0 +1,8 @@
+@use 'setting';
+@use 'mixin';
+
+.container {
+    max-width: setting.$contents--max-width;
+    width: 100%;
+    margin: 0 auto;
+}

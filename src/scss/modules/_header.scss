@@ -1,0 +1,60 @@
+@use 'setting';
+@use 'mixin';
+
+.header {
+    width: 100%;
+    height: 64px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    @include mixin.mq(lg) {
+        height: 70px;
+        top: 32px;
+        right: 0;
+        left: 0;
+    }
+}
+.header__container {
+    width: 100%;
+    height: 100%;
+    background-color: setting.$color-white;
+    padding-top: 12px;
+    padding-right: 16px;
+    padding-bottom: 12px;
+    &--sm {
+        background-color: setting.$color-main;
+        padding-left: 16px;
+        @include mixin.mq(lg) {
+            display: none;
+        }
+    }
+    &--lg {
+        display: none;
+        @include mixin.mq(lg) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1320px;
+            width: 100%;
+            margin: 0 auto;
+            padding-left: 35px;
+            border-radius: 70px;
+            box-shadow: 0 1em 2em rgba($color: #000000, $alpha: 0.2);
+        }
+    }
+}
+.header__ttl {
+    display: flex;
+    align-items: center;
+}
+.header__img {
+    width: 28px;
+    height: 28px;
+    margin-right: 12px;
+}
+.header__logo {
+    @include mixin.fz(16);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
