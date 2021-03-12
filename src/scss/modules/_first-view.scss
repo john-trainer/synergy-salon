@@ -4,6 +4,9 @@
 .first-view {
     @include mixin.vs(height, 320px, 221.87px, 1440px, 768px);
     position: relative;
+    @include mixin.mq(lg) {
+        margin-top: 70px;
+    }
 }
 .first-view__container {
     width: 100%;
