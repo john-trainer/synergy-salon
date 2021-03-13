@@ -1,0 +1,27 @@
+@use 'setting';
+@use 'mixin';
+
+.instagram {
+    display: none;
+    @include mixin.mq(lg) {
+        display: block;
+        border: 2px solid setting.$color-black;
+        border-right: 2px solid transparent;
+        writing-mode: vertical-lr;
+        position: fixed;
+        top: 40%;
+        right: 0;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+}
+.instagram__link {
+    @include mixin.fz(16);
+    font-weight: 600;
+    display: inline-block;
+    color: currentColor;
+    text-decoration: none;
+    text-transform: capitalize;
+    letter-spacing: 0.15em;
+    padding: 38.5px 8px;
+}

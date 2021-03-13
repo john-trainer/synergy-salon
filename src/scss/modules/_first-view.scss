@@ -5,7 +5,8 @@
     @include mixin.vs(height, 320px, 221.87px, 1440px, 768px);
     position: relative;
     @include mixin.mq(lg) {
-        margin-top: 70px;
+        margin: 70px calc(50% - 50vw) 0 0;
+        padding: 0 calc(50vw - 50%) 0 0;
     }
 }
 .first-view__container {
