@@ -37,6 +37,12 @@
 .performance {
     position: relative;
 }
+.performance {
+    @include mixin.mq(lg) {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
 .svg-wrapper {
     display: none;
     @include mixin.mq(lg) {
@@ -86,7 +92,6 @@
 }
 .svg-menu {
     @include mixin.vs(width, 320px, 237.2px, 1440px, 570px);
-    // transform: rotate(-6.86deg);
 }
 .svg-performance {
     @include mixin.vs(width, 320px, 111.8px, 1440px, 355px);
@@ -133,6 +138,14 @@
     text-align: center;
     @include mixin.mq(lg) {
         text-align: left;
+    }
+}
+.sec__ttl--exception {
+    @include mixin.mq(lg) {
+        display: block;
+        max-width: setting.$contents--max-width;
+        width: 100%;
+        margin: 0 auto;
     }
 }
 .owner-name {

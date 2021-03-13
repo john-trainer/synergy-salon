@@ -6,3 +6,8 @@
     width: 100%;
     margin: 0 auto;
 }
+.container--exception {
+    @include mixin.mq(lg) {
+        max-width: 100%;
+    }
+}

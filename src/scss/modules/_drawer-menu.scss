@@ -4,11 +4,7 @@
 .drawer-menu {
     width: 100vw;
     height: 100vh;
-
-    // 最終的にはこっちの指定
     background-color: setting.$color-main;
-    // background-color: rgba($color: setting.$color-main, $alpha: 0.5);
-
     transform: translateX(100%);
     transition: transform 0.2s;
     position: fixed;
