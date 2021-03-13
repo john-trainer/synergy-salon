@@ -37,4 +37,8 @@
     margin-top: 16px;
     margin-right: auto;
     margin-left: auto;
+    @include mixin.mq(lg) {
+        margin-top: 16px;
+        margin-left: 0;
+    }
 }
