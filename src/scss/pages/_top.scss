@@ -172,27 +172,9 @@
         margin-top: 64px;
     }
 }
-// .content-img-wrapper {
-//     width: 100%;
-//     height: 176px;
-// }
-// .content-img-wrapper--concept {
-//     margin-top: 16px;
-// }
-// .content-img-wrapper--about {
-//     margin-top: 16px;
-// }
-// .content-img {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     border-radius: 5px;
-// }
 .content-img {
     width: 100%;
-    height: 176px;
-    // height: 0;
-    // padding-top: 56.25%;
+    @include mixin.vs(height, 320px, 150.2px, 992px, 465.6px);
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
@@ -271,8 +253,6 @@
         justify-content: flex-start;
         align-items: center;
         margin-top: 88px;
-        // margin: 88px calc(50% - 50vw) 0;
-        // padding: 0 calc(50vw - 50%);
     }
     & + .aword-wrapper {
         margin-top: 40px;
@@ -288,8 +268,7 @@
 }
 .aword {
     width: 100%;
-    height: 176px;
-    // height: 56.25%;
+    @include mixin.vs(height, 320px, 150.2px, 992px, 465.6px);
     @include mixin.mq(lg) {
         width: 50%;
         @include mixin.vs(height, 992px, 355.47px, 1440px, 516px);
@@ -373,7 +352,7 @@
 }
 .map-wrapper {
     width: 100%;
-    height: 176px;
+    @include mixin.vs(height, 320px, 150.2px, 992px, 465.6px);
     margin-top: 16px;
     overflow: hidden;
     @include mixin.mq(lg) {
