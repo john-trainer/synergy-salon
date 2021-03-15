@@ -32,11 +32,21 @@ for (let i = 0; i < smoothScrollTrigger.length; i++) {
         let targetElement = document.getElementById(href.replace('#', ''));
         const rect = targetElement.getBoundingClientRect().top;
         const offset = window.pageYOffset;
-        const gap = 0;
-        const target = rect + offset - gap;
-        window.scrollTo({
-            top: target,
-            behavior: 'smooth',
-        });
+        // windowの幅992px未満と992px以上の条件分岐
+        if (window.outerWidth < 992) {
+            const gapSmall = 0;
+            const targetSmall = rect + offset - gapSmall;
+            window.scrollTo({
+                top: targetSmall,
+                behavior: 'smooth',
+            });
+        } else {
+            const gapLarge = document.querySelector('.header').clientHeight;
+            const targetLarge = rect + offset - gapLarge * 2;
+            window.scrollTo({
+                top: targetLarge,
+                behavior: 'smooth',
+            });
+        }
     });
 }
