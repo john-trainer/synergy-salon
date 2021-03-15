@@ -33,13 +33,23 @@ var _loop = function _loop(_i) {
 
     var targetElement = document.getElementById(href.replace('#', ''));
     var rect = targetElement.getBoundingClientRect().top;
-    var offset = window.pageYOffset;
-    var gap = 0;
-    var target = rect + offset - gap;
-    window.scrollTo({
-      top: target,
-      behavior: 'smooth'
-    });
+    var offset = window.pageYOffset; // windowの幅992px未満と992px以上の条件分岐
+
+    if (window.outerWidth < 992) {
+      var gapSmall = 0;
+      var targetSmall = rect + offset - gapSmall;
+      window.scrollTo({
+        top: targetSmall,
+        behavior: 'smooth'
+      });
+    } else {
+      var gapLarge = document.querySelector('.header').clientHeight;
+      var targetLarge = rect + offset - gapLarge * 2;
+      window.scrollTo({
+        top: targetLarge,
+        behavior: 'smooth'
+      });
+    }
   });
 };
 
