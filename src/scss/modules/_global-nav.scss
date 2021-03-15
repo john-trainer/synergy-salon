@@ -23,8 +23,10 @@
     padding: 22px 0;
     border-bottom: 2px solid transparent;
     transition: border-bottom 0.2s;
-    &:focus,
     &:hover {
+        border-bottom: 2px solid setting.$color-main;
+    }
+    &.active {
         border-bottom: 2px solid setting.$color-main;
     }
 }

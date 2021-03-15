@@ -55,4 +55,35 @@ var _loop = function _loop(_i) {
 
 for (var _i = 0; _i < smoothScrollTrigger.length; _i++) {
   _loop(_i);
+} // スクロール連動
+
+
+var sections = document.querySelectorAll('.sec');
+var options = {
+  root: null,
+  rootMargin: '-50% 0px',
+  threshold: 0
+};
+var observer = new IntersectionObserver(doWhenIntersect, options);
+sections.forEach(function (section) {
+  observer.observe(section);
+});
+
+function doWhenIntersect(entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      activateIndex(entry.target);
+    }
+  });
+}
+
+function activateIndex(element) {
+  var currentActiveIndex = document.querySelector('#js-global-nav__items .active');
+
+  if (currentActiveIndex !== null) {
+    currentActiveIndex.classList.remove('active');
+  }
+
+  var newActiveIndex = document.querySelector(".global-nav__link[href='#".concat(element.id, "']"));
+  newActiveIndex.classList.add('active');
 }

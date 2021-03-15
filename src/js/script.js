@@ -50,3 +50,37 @@ for (let i = 0; i < smoothScrollTrigger.length; i++) {
         }
     });
 }
+
+// スクロール連動
+const sections = document.querySelectorAll('.sec');
+
+const options = {
+    root: null,
+    rootMargin: '-50% 0px',
+    threshold: 0,
+};
+const observer = new IntersectionObserver(doWhenIntersect, options);
+sections.forEach((section) => {
+    observer.observe(section);
+});
+
+function doWhenIntersect(entries) {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            activateIndex(entry.target);
+        }
+    });
+}
+
+function activateIndex(element) {
+    const currentActiveIndex = document.querySelector(
+        '#js-global-nav__items .active'
+    );
+    if (currentActiveIndex !== null) {
+        currentActiveIndex.classList.remove('active');
+    }
+    const newActiveIndex = document.querySelector(
+        `.global-nav__link[href='#${element.id}']`
+    );
+    newActiveIndex.classList.add('active');
+}
