@@ -9,6 +9,15 @@
         <script src="dist/js/script.js" defer></script>
         <script src="dist/js/smoothscroll.js" defer></script>
         <script src="dist/js/viewport.js" defer></script>
+        <script type="text/javascript">
+            var submitted = false;
+        </script>
+        <iframe
+            name="hidden_iframe"
+            id="hidden_iframe"
+            style="display: none"
+            onload="if(submitted) {window.location='thanks.html';}"
+        ></iframe>
     </head>
     <body>
         <header class="header">
@@ -686,7 +695,8 @@
                             <form
                                 class="contact-form"
                                 action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeccZu6pMlkb8dX1yvseDiojGkiwhuPEKyu7173Sn_fz4fCdA/formResponse"
-                                target="_self"
+                                target="hidden_iframe"
+                                onsubmit="submitted=true"
                                 method="POST"
                                 id="mG61Hd"
                                 jsmodel="TOfxwf Q91hve"
@@ -726,7 +736,7 @@
                                     <li class="contact-form__list">
                                         <input
                                             class="contact-form__item"
-                                            type="number"
+                                            type="tel"
                                             name="entry.1020328408"
                                             required
                                             placeholder="電話番号"
