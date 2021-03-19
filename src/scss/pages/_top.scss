@@ -101,7 +101,9 @@
 }
 .sec__ttl {
     @include mixin.fz(26);
+    font-family: setting.$font-family--en;
     font-weight: 700;
+    font-style: italic;
     text-align: center;
     letter-spacing: 0.15em;
     @include mixin.mq(lg) {
@@ -159,11 +161,13 @@
     @include mixin.fz(14);
     font-weight: 300;
     letter-spacing: 0.05em;
-    line-height: 1.78em;
+    line-height: 1.78;
     margin-top: 24px;
 }
 .sec__txt--menu {
     @include mixin.mq(lg) {
+        @include mixin.fz(18);
+        line-height: 2.1;
         text-align: center;
     }
 }
@@ -229,6 +233,7 @@
 }
 .menu__ttl {
     @include mixin.fz(22);
+    font-family: setting.$font-family--en;
     font-weight: 600;
     text-transform: uppercase;
 }
