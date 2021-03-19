@@ -3,7 +3,9 @@
 
 .scroll-bar {
     display: none;
+    font-family: setting.$font-family--en;
     font-weight: 500;
+    font-style: italic;
     color: setting.$color-gray;
     writing-mode: vertical-lr;
     transform: translateY(-50%);

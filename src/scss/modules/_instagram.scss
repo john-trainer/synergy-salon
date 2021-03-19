@@ -17,6 +17,7 @@
 }
 .instagram__link {
     @include mixin.fz(16);
+    font-family: setting.$font-family--en;
     font-weight: 600;
     display: inline-block;
     color: currentColor;

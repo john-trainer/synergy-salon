@@ -29,6 +29,7 @@
 }
 .drawer-menu__item {
     @include mixin.fz(24);
+    font-family: setting.$font-family--en;
     font-weight: 700;
     text-align: center;
     letter-spacing: 0.02em;
